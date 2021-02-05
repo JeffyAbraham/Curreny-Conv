@@ -1,0 +1,27 @@
+.currency-convertor-container {
+  display: flex;
+  margin-top: 50px;
+  width: 436px;
+  height: fit-content;
+}
+.currency-convertor-group {
+  background-color: #f0f1f4;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  padding: 30px;
+}
+.currency-convertor-group-1 {
+    background-color: #f0f1f4;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    margin-left: 50px;
+    padding: 30px;
+  }
+  .conversion-rate{
+      font-family: 'Roboto';
+      font-weight: 300;
+      font-size: 18px;
+      margin-top: 18px;
+  }

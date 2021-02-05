@@ -1,0 +1,22 @@
+.custom-button-container {
+  width: 297px;
+  height: 62px;
+  color: #ffffff;
+  background: #15255e;
+  border: none;
+  padding: 10px;
+  outline: none;
+  box-shadow: none;
+  border: 2px solid #15255e;
+}
+.custom-button-container span{
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  line-height: 19px;
+  line-height: 18.75px;
+  color: white;
+  width: 201px;
+  height: 19px;
+}

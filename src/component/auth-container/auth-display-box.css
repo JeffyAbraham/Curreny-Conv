@@ -1,0 +1,14 @@
+.authentication-box-container-flex
+{
+    border-style: solid;
+    color:green;
+    display: flex;
+    background-color: ivory;
+}
+.authentication-box-logo{
+    border: solid;
+    border-color: crimson;
+}
+.authentication-form{
+  color: rebeccapurple;
+}
