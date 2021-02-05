@@ -1,18 +1,11 @@
-.navbar-container-flex
-{
-    display: flex;
-    flex-direction: row;
- 
-   
- 
-    
+.navbar-container-flex {
+  display: flex;
+  flex-direction: row;
 }
-.navbar-container
-{
-width: 100%;
-background-color: #2B439C;
-
-
-
-
+.navbar-container {
+  width: 100%;
+  background-color: #2b439c;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }

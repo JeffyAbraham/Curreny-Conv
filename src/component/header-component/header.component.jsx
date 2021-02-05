@@ -1,9 +1,11 @@
 import React from "react";
 import CustomButton from "../custom-button-component/custombutton.component";
 import UserAvatar from "../user-avatar-component/user-avatar.component";
-import './header.styles.css'
-const Header = ({user}) => {
-    {console.log()}
+import "./header.styles.css";
+const Header = ({ user }) => {
+  {
+    console.log();
+  }
   return (
     <div className="navbar-container">
       <div className="navbar-container-flex">
@@ -13,16 +15,8 @@ const Header = ({user}) => {
         <div>
           <CustomButton>CURRENT EXCHANGE RATES</CustomButton>
         </div>
-        {user
-        ? <UserAvatar />
-        : <div>Sign Out</div>}
       </div>
-     
-      <div>
-     
-      </div>
-
-       
+      <div>{user ? <UserAvatar userName={user} /> : <div>Sign Out</div>}</div>
     </div>
   );
 };
