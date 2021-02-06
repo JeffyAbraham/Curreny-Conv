@@ -37,7 +37,7 @@ var signInWithGoogleMail = function signInWithGoogleMail() {
   return function (dispatch) {
     (0, _firebaseUtility.signInWithGoogle)().then(function (_ref) {
       var user = _ref.user;
-      dispatch(setCurrentUser(user));
+      alert(user.displayName);
     })["catch"](function (err) {
       console.log(err);
     });

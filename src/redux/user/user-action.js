@@ -18,7 +18,7 @@ export const signInWithGoogleMail = () => {
   return (dispatch) => {
     signInWithGoogle()
       .then(({ user }) => {
-       dispatch(setCurrentUser(user))
+       alert(user.displayName)
        
       })
       .catch((err) => {
