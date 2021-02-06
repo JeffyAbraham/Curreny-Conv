@@ -2,7 +2,7 @@ import React from "react";
 import CustomButton from "../custom-button-component/custombutton.component";
 import UserAvatar from "../user-avatar-component/user-avatar.component";
 import "./header.styles.css";
-const Header = ({ user }) => {
+const Header = () => {
   {
     console.log();
   }
@@ -16,7 +16,8 @@ const Header = ({ user }) => {
           <CustomButton>CURRENT EXCHANGE RATES</CustomButton>
         </div>
       </div>
-      <div>{user ? <UserAvatar userName={user} /> : <div>Sign Out</div>}</div>
+
+      <div>{<UserAvatar />}</div>
     </div>
   );
 };

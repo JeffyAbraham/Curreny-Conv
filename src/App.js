@@ -1,44 +1,28 @@
 import React from "react";
-import AuthContainer from "./component/auth-container/auth-display-box.component";
-import Axios from "axios";
-import './App.css'
-import Homepage from './page/homepage/homepage'
-import { Switch, Route, Redirect } from "react-router-dom";
-import Header from './component/header-component/header.component'
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import Header from "./component/header-component/header.component";
 import HomePage from "./page/homepage/homepage";
+import { connect } from "react-redux";
 
-class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      currencyRate: "",
-      currentUser:'Jeffy Abraham'
-    };
+const App = (props) => {
+  {
+    console.log(props);
   }
 
-  componentDidMount() {
-    Axios.get(
-      "https://v6.exchangerate-api.com/v6/09387663c4aa2afdb290cafa/pair/EUR/GBP"
-    ).then((res, err) => {
-      console.log(res.data);
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <Header user={this.state.currentUser}/>
-        <div className='page-container'>
+  return (
+    <div>
+      <Header />
+      <div className="page-container">
         <Switch>
-        <Route exact path="/" component={HomePage} />
-
-         
-     
+          <Route exact path="/" component={HomePage} />
         </Switch>
-        </div>
       </div>
-    );
-  }
-}
-export default App;
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => ({
+  currentUser: state,
+});
+export default connect(mapStateToProps, null)(App);
