@@ -1,6 +1,13 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.signInWithGoogle = void 0;
+
 var _app = _interopRequireDefault(require("firebase/app"));
+
+require("firebase/auth");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -14,10 +21,17 @@ var firebaseConfig = {
   measurementId: "G-ZHGJLFTSK2"
 };
 
-_app["default"].auth().signInWithEmailAndPassword(email, password).then(function (userCredentials) {
-  console.log(userCredentials);
-})["catch"](function (error) {
-  console.log(error);
+_app["default"].initializeApp(firebaseConfig);
+
+var auth = _app["default"].auth();
+
+var provider = new _app["default"].auth.GoogleAuthProvider();
+provider.setCustomParameters({
+  prompt: "select_account"
 });
 
-_app["default"].initializeApp(firebaseConfig);
+var signInWithGoogle = function signInWithGoogle() {
+  return auth.signInWithPopup(provider);
+};
+
+exports.signInWithGoogle = signInWithGoogle;

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import FormBox from "../form-component/form.component";
 import CustomButton from "../custom-button-component/custombutton.component";
 import "./auth-form.component.css";
+import { signInWithGoogleMail} from '../../redux/user/user-action'
 import GoogleButton from "react-google-button";
+import {connect} from 'react-redux'
 
 const AuthForm = () => {
   //setForm can be used to change the state of form
@@ -17,7 +19,7 @@ const AuthForm = () => {
       ...form,
       [e.target.name]: e.target.value,
     });
-    console.log(form);
+    
   };
 
   const handleSubmit = (e) => {
@@ -26,7 +28,7 @@ const AuthForm = () => {
     {
       alert('Please enter email and password')
     }
-    console.log(form)
+ 
   };
 
   return (
@@ -53,7 +55,7 @@ const AuthForm = () => {
         </form>
       </div>
       <div className="google-button">
-        <GoogleButton style={{ outline: "none", width: "240px" }} />
+        <GoogleButton style={{ outline: "none", width: "240px" }} onClick={signInWithGoogleMail()}/>
       </div>
     </div>
   );
