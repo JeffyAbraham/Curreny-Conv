@@ -4,18 +4,12 @@
   align-items: center;
   width: 40%;
   margin: auto;
-  margin-top: -200px;
-  
-
-
-
-  
+  margin-top: -140px;
 }
 
 .authentication-box-container {
   justify-content: center;
   padding: 30px;
-
 }
 
 .slogan {
@@ -28,7 +22,6 @@
   animation-name: animslo;
   animation-duration: 6s;
   animation-fill-mode: forwards;
-  
 }
 
 @keyframes animslo {
