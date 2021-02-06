@@ -1,17 +1,14 @@
 import React from "react";
-import "./form-component.styles.css";
-const FormBox = ({ handleChange, label, ...otherprops }) => {
-   
+import './form-component.styles.scss'
+const FormInput = ({ handleChange, label, ...otherprops }) => {
   return (
-   
-    <div className='form-input-container'>
-       
-     <div className="form-input-label">{label}</div>
-      <input className="form-input-box" {...otherprops}  onChange={handleChange} />
-      
+    <div className='group'>
+      <input className='form-input' onChange={handleChange} {...otherprops} />
+      { //if label exist then shrink the interior text we are making it resuable
+          label?(<label className={`${otherprops.value.length?'shrink':''}form-input-label`}>{label}</label>):null
+      }
     </div>
   );
 };
-export default FormBox;
 
-//if label exist tyen change color
+export default FormInput;

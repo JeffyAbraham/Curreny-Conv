@@ -1,48 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import FormBox from "../form-component/form.component";
-import CustomButton from '../custom-button-component/custombutton.component'
+import CustomButton from "../custom-button-component/custombutton.component";
+import "./auth-form.component.css";
+import GoogleButton from "react-google-button";
 
-class AuthForm extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      userName: "",
-      email: "",
-    };
-  }
+const AuthForm = () => {
+  //setForm can be used to change the state of form
 
-  handleChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+    console.log(form);
   };
-  handleSubmit = (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const { userName, email } = this.state;
-    alert(userName);
+    if(form.email==''	|| form.password=='')
+    {
+      alert('Please enter email and password')
+    }
+    console.log(form)
   };
 
-  render() {
-    return (
+  return (
+    <div className="form-content">
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <FormBox
-            type="text"
-            name="userName"
-            handleChange={this.handleChange}
-            label="Username"
-            value={this.state.userName}
-          />
-          <FormBox
-            type="E-mail"
+            type="email"
             name="email"
-            handleChange={this.handleChange}
+            handleChange={handleChange}
             label="E-mail"
-            value={this.state.email}
+            value={form.email}
           />
-         <CustomButton/>
+          <FormBox
+            type="password"
+            name="password"
+            handleChange={handleChange}
+            label="Password"
+            value={form.password}
+          />
+          <div className="button-form" onClick={handleSubmit}>
+            <CustomButton>LOG IN</CustomButton>
+          </div>
         </form>
       </div>
-    );
-  }
-}
+      <div className="google-button">
+        <GoogleButton style={{ outline: "none", width: "240px" }} />
+      </div>
+    </div>
+  );
+};
+
 export default AuthForm;
