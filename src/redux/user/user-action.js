@@ -18,7 +18,8 @@ export const signInWithGoogleMail = () => {
   return (dispatch) => {
     signInWithGoogle()
       .then(({ user }) => {
-        console.log(user);
+        console.log(user.photoURL);
+       
       })
       .catch((err) => {
         console.log(err);
