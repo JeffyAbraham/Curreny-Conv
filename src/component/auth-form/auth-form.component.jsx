@@ -6,7 +6,7 @@ import { signInWithGoogleMail} from '../../redux/user/user-action'
 import GoogleButton from "react-google-button";
 import {connect} from 'react-redux'
 
-const AuthForm = () => {
+const AuthForm = ({signInWithGoogleMail}) => {
   //setForm can be used to change the state of form
 
   const [form, setForm] = useState({
@@ -55,10 +55,14 @@ const AuthForm = () => {
         </form>
       </div>
       <div className="google-button">
-        <GoogleButton style={{ outline: "none", width: "240px" }} onClick={signInWithGoogleMail()}/>
+        <GoogleButton style={{ outline: "none", width: "240px" }} onClick={signInWithGoogleMail}/>
       </div>
     </div>
   );
 };
 
-export default AuthForm;
+const mapDispatchToProps = (dispatch) => ({
+  signInWithGoogleMail: () => dispatch(signInWithGoogleMail()),
+});
+
+export default connect(null, mapDispatchToProps)(AuthForm);
