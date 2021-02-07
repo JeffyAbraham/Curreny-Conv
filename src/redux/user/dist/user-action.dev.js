@@ -39,7 +39,7 @@ var signInWithGoogleMail = function signInWithGoogleMail() {
       var user = _ref.user;
       alert(user.displayName);
     })["catch"](function (err) {
-      console.log(err);
+      alert(err);
     });
   };
 };
