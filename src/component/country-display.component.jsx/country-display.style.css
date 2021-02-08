@@ -1,0 +1,19 @@
+.country-display-flex {
+  display: flex;
+  width: 350px;
+  height: 100px;
+  justify-content: space-between;
+  border: none;
+  font-size: 22px;
+  padding: 10px;
+  outline: none;
+
+}
+.amount-container {
+  font-size: 24px;
+  height: 20px;
+  width: 350px;
+  padding: 20px;
+  outline: none;
+  border: none;
+}

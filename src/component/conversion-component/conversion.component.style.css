@@ -1,0 +1,16 @@
+.conversion-component-container {
+  display: flex;
+  justify-content: space-around;
+}
+.conversion-component-container-main {
+  width: 90%;
+  border-style: solid;
+  padding: 50px;
+  margin: auto;
+}
+@media screen and (max-width: 780px) {
+  .conversion-component-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,13 +1,14 @@
 import React from "react";
-import AuthForm from "../auth-form/auth-form.component";
+import AuthForm from "../auth-form-component/auth-form.component";
 import Logo from "../title-component/title.component";
 import "./auth-display-box.css";
-import CustomButton from "../custom-button-component/custombutton.component";
+
 
 
 const Container = () => {
 
   return (
+   <div className="page-one-bg">
     <div className="authentication-box-container">
       <div className="authentication-box-container-flex">
         <div className="authentication-box-logo">
@@ -26,6 +27,7 @@ const Container = () => {
         
       </div>
     </div>
+    </div> 
   );
 };
 export default Container;

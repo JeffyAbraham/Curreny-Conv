@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import FormBox from "../form-component/form.component";
+import FormBox from "../form-component-component/form.component";
 import CustomButton from "../custom-button-component/custombutton.component";
 import "./auth-form.component.css";
-import { signInWithGoogleMail} from '../../redux/user/user-action'
+import { signInWithGoogleMail } from "../../redux/user/user-action";
 import GoogleButton from "react-google-button";
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
 
-const AuthForm = ({signInWithGoogleMail}) => {
+const AuthForm = ({ signInWithGoogleMail }) => {
   //setForm can be used to change the state of form
 
   const [form, setForm] = useState({
@@ -19,16 +19,13 @@ const AuthForm = ({signInWithGoogleMail}) => {
       ...form,
       [e.target.name]: e.target.value,
     });
-    
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(form.email==''	|| form.password=='')
-    {
-      alert('Please enter email and password')
+    if (form.email == "" || form.password == "") {
+      alert("Please enter email and password");
     }
- 
   };
 
   return (
@@ -55,7 +52,10 @@ const AuthForm = ({signInWithGoogleMail}) => {
         </form>
       </div>
       <div className="google-button">
-        <GoogleButton style={{ outline: "none", width: "240px" }} onClick={signInWithGoogleMail}/>
+        <GoogleButton
+          style={{ outline: "none", width: "240px" }}
+          onClick={signInWithGoogleMail}
+        />
       </div>
     </div>
   );

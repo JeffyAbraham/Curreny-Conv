@@ -1,0 +1,29 @@
+select {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  outline: none;
+  border: none;
+}
+
+option {
+  font-size: 22px;
+  padding: 10px;
+}
+.currency-info
+{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  
+}
+.conversion-container
+{
+  width: 390px;
+  border-style: solid;
+  padding: 20px;
+ 
+
+}
+
