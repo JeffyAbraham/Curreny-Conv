@@ -5,31 +5,26 @@ import CountryDisplay from "../country-display.component.jsx/country-display.com
 
 class Dropdown extends React.Component {
   render() {
-  
-    const { currencies,initialValue,setCurrency } = this.props;
-    
-  
+    const { currencies, initialValue, setCurrency, resetVal } = this.props;
     return (
-      
       <div className="conversion-container">
-        <select onChange={(e)=>setCurrency(e.target.value)}>
-          <option>{initialValue.currencyName} ({initialValue.currency})</option>
+        <div className='conversion-header'>Currency</div>
+        <select onChange={(e) => {setCurrency(e.target.value);resetVal()}}>
+          <option>
+            {initialValue.currencyName} ({initialValue.currency})
+          </option>
           {currencies.map((item) => {
             return (
               <option key={item.id} value={item.id}>
-                
                 {item.currencyName} ({item.currency})
               </option>
             );
           })}
         </select>
-        <div>
-          <CountryDisplay  {...initialValue}/>
+        <div className='display-country'>
+         <CountryDisplay {...initialValue}/>
         </div>
-        <div className="currency-info">
-          <span>{initialValue.currencyName}</span>
-          <span>1 {initialValue.symbol} USD = 0.87 € EUR</span>
-        </div>
+        <div className="currency-info"></div>
       </div>
     );
   }

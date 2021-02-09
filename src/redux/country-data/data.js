@@ -93,7 +93,7 @@ export const currencyData=
       },
       {
         id: 12,
-        currency: "SAR",
+        currency: "SR",
         currencyName: "Saudi Arabia Rial",
         symbol: "﷼",
         flag:

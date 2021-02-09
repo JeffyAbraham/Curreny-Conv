@@ -1,16 +1,37 @@
 .conversion-component-container {
+  width: 95%;
+  margin: auto;
   display: flex;
   justify-content: space-around;
 }
 .conversion-component-container-main {
-  width: 90%;
-  border-style: solid;
   padding: 50px;
   margin: auto;
+ 
 }
-@media screen and (max-width: 780px) {
+.converion-component-dropdown {
+  background: #f0f1f4;
+  border-radius: 10px;
+  padding: 30px;
+  padding-top: 62px;
+  width: 436px;
+  height: 360px;
+  padding-bottom: 20px;
+}
+@media only screen and (max-width: 1200px) {
   .conversion-component-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: max-content;
+  }
+  .converion-component-dropdown {
+    background: #f0f1f4;
+    border-radius: 10px;
+    width: 266px;
+    height: fit-content;
+    padding: none;
+   
   }
 }
