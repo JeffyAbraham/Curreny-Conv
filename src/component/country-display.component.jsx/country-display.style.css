@@ -3,6 +3,7 @@
   width: 100%;
   height: fit-content;
   justify-content: space-between;
+  align-items: center;
   font-size: 22px;
   outline: none;
 }
@@ -11,9 +12,10 @@
 {
  
   display: flex;
-  width: 50%;
+  width: 53%;
   height: fit-content;
-  justify-content: space-around;
+  justify-content: space-between;
+
   
 }
 .amount-container {

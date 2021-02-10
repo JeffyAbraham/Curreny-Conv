@@ -2,7 +2,6 @@ import { React, useEffect, useState } from "react";
 import Dropdown from "../dropdown-component/drop-down-component";
 import "./conversion.component.style.css";
 import { connect } from "react-redux";
-import { selectCurrentUser } from "../../redux/compute-value/compute-value-selector";
 import {
   setBaseCurrency,
   setTargetCurrency,
@@ -24,6 +23,9 @@ function Conversion({
   });
 
   const handleChangeTarget = (e) => {
+    if (e.target.value < 0) {
+      alert("Number should be positive");
+    }
     setForm({
       ...form,
       baseInputValue: (e.target.value * ExchangeRate).toFixed(2),
@@ -51,47 +53,52 @@ function Conversion({
   });
   return (
     <div className="conversion-component-container-main">
+      <div className="currency-conv">
+        <div>Currency converter</div>
+        <div>
+          <span className="header-span">
+            Please enter the amount you want to convert in any field.
+          </span>
+        </div>
+      </div>
+
       <div className="conversion-component-container">
         <div className="converion-component-dropdown">
-         <div>
-          
-          <Dropdown
-            tag="Base"
-            setCurrency={setBaseCurrency}
-            currencies={currencyDetails}
-            initialValue={baseCurrency}
-            resetVal={resetValue}
-          />
-          </div> 
           <div>
-       
-          <input
-            className="amount-container"
-            type="number"
-            value={form.baseInputValue}
-            onChange={(e) => handleChangeBase(e)}
-          />
+            <Dropdown
+              tag="Base"
+              setCurrency={setBaseCurrency}
+              currencies={currencyDetails}
+              initialValue={baseCurrency}
+              resetVal={resetValue}
+            />
+          </div>
+          <div>
+            <input
+              className="amount-container"
+              type="number"
+              value={form.baseInputValue}
+              onChange={(e) => handleChangeBase(e)}
+            />
           </div>
         </div>
         <div className="converion-component-dropdown">
           <div>
-       
-          <Dropdown
-            setCurrency={setTargetCurrency}
-            tag="Target"
-            currencies={currencyDetails}
-            initialValue={targetCurrency}
-            resetVal={resetValue}
-          />
+            <Dropdown
+              setCurrency={setTargetCurrency}
+              tag="Target"
+              currencies={currencyDetails}
+              initialValue={targetCurrency}
+              resetVal={resetValue}
+            />
           </div>
-         <div>
-         
-          <input
-            className="amount-container"
-            value={form.targetInputValue}
-            type="number"
-            onChange={(e) => handleChangeTarget(e)}
-          />
+          <div>
+            <input
+              className="amount-container"
+              value={form.targetInputValue}
+              type="number"
+              onChange={(e) => handleChangeTarget(e)}
+            />
           </div>
         </div>
       </div>

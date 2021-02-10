@@ -7,7 +7,7 @@ const INITIAL_STATE = {
     currencyName: "Chinese Yuan",
     symbol: "¥",
     flag:
-      "https://cdn2.iconfinder.com/data/icons/world-flag-icons/256/Flag_of_China.png",
+      "https://www.countryflags.io/CN/shiny/64.png",
   },
 
   currencyDetails: currencyData,
@@ -17,7 +17,7 @@ const INITIAL_STATE = {
     currencyName: "British Pound",
     symbol: "£",
     flag:
-      "https://cdn1.iconfinder.com/data/icons/flags-of-the-world-2/128/england-circle-512.png",
+      "https://www.countryflags.io/GB/shiny/64.png",
   },
 };
 export const currencyReducer = (state = INITIAL_STATE, action) => {

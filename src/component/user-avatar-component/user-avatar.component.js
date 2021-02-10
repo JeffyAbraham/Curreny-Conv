@@ -1,12 +1,13 @@
 import React from "react";
 import "./user-avatar.styles.css";
-const UserAvatar = ({ userName }) => {
+const UserAvatar = ({ userName,userPic }) => {
   return (
     <div className='user-avatar-container'>
       <button className='user-avatar'>
-        <span>J A</span>
+      <span>{userName}</span>
+      <span>{userPic}</span>
       </button>
-      <span>Jeffy Abraham</span>
+    
     </div>
   );
 };

@@ -18,7 +18,17 @@
 }
 .homepage-container {
   width:90%;
-  border: red;
-
+  margin-top: 90px;
+  margin-left: 300px;
+  margin:auto
+  
 }
-
+.currency-conv
+{
+  font-weight: 700;
+  font-family: 'roboto';
+  font-size: 28px;
+  color: #333333;
+  margin-left: 80px;
+  margin-top: 80px;
+}

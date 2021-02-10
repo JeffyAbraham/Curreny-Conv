@@ -11,9 +11,8 @@ const CountryDisplay = ({currencyName,symbol,flag,currency}) => {
         </div>
         <div>
           <img
-            src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png"
-            width="70px"
-            height="40px"
+            src={flag}
+           width='70px'height='65px'
           />
         </div>
       </div>

@@ -1,20 +1,15 @@
 import React from "react";
 import "./homepage.css";
 import "../../component/form-component-component/form.component";
-import Conversion from "../../component/conversion-component/conversion.component";
-import Header from '../../component/header-component-component/header.component'
+import ConversionComponent from "../../component/conversion-component/conversion.component";
 
-
-
-const HomePage = () => {
-
+const HomePage = (props) => {
   return (
-    <div>
-      <Header/>
-      <Conversion/>
+    <div className="homepage-container">
+      <div style={{ marginTop: "-30px" }}>
+        <ConversionComponent />
+      </div>
     </div>
-);
-  }
+  );
+};
 export default HomePage;
-
-

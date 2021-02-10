@@ -3,11 +3,39 @@
   margin: auto;
   display: flex;
   justify-content: space-around;
+  margin-top: 100px;
 }
+.currency-conv {
+  margin-left: 170px;
+  width: 50%;
+  height: 129px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  /* identical to box height */
+
+  /* Gray 1 */
+
+  color: #333333;
+}
+
 .conversion-component-container-main {
-  padding: 50px;
+  padding: 20px;
   margin: auto;
- 
+}
+.header-span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  margin-top: 20px;
+  padding-top: -50px;
 }
 .converion-component-dropdown {
   background: #f0f1f4;
@@ -32,6 +60,5 @@
     width: 266px;
     height: fit-content;
     padding: none;
-   
   }
 }

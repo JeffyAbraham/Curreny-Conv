@@ -8,3 +8,10 @@ body {
   width: 100%;
   margin: auto;
 }
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
+}

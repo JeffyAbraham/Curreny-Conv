@@ -1,0 +1,267 @@
+@media only screen and (max-width: 700px) {
+    header{
+    display: none;
+    }
+    .HamburgerMenu{
+      display: flex !important;
+     width: 100%px;
+     justify-content: space-between;
+     align-items: baseline;
+     margin-top: 42px;
+     font-size: 22px;
+     letter-spacing: 0.8rem;
+
+     font-family: 'Roboto';
+    
+    }
+   
+   
+   }
+   .MainHamburgerMenu{
+     padding-top: 20px;
+     display: flex;
+     flex-direction: column;
+     position: absolute;
+     background-color: 
+     #2B439C;
+     overflow-x: hidden;
+     transition: 0.5s;
+     margin-left: -25px;
+     height: 100%;
+     width: 0;
+     z-index: 1000;
+    
+     
+   
+   }
+   .fexi
+   {
+     display: flex;
+     justify-content: space-between;
+     justify-items: center;
+   }
+   
+   .ham{
+     padding-top: 50px;
+     padding-left:20px ;
+     color: white;
+     font-weight: 500;
+   
+     letter-spacing: 0.2rem;
+   }
+   
+   .ham1{
+     padding-left: 0px;
+   
+   }
+   li a{
+    
+    letter-spacing: 0.1rem;
+    color: black;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 30px;
+    
+    
+   }
+   
+   .MainContainer
+   {
+     
+     top: 0;
+    
+   }
+   .MainContainer:hover{
+     background-color: white;
+    
+   }
+   .Navgat{
+     display: flex;
+   }
+   
+   li {
+     float: left;
+   }
+   ul {
+     list-style-type: none;
+     overflow: hidden;
+     padding-top: 30px;
+   
+     
+   }
+   nav{
+     display:flex;
+     
+     justify-content: space-between;
+     
+   }
+   .Title
+   {
+     font-size: 30px;
+     font-weight: 500;
+     letter-spacing: 0.2rem;
+     padding-right: 30px;
+   
+   }
+   .Title2{
+     font-size: 20px;
+     font-weight: 500;
+     letter-spacing: 0.1rem;
+
+
+   
+   
+   
+   
+   
+   }
+   .Cart
+   {
+    margin-top: 34px;
+    margin-right: 5%;
+   
+   }
+   .line{
+     margin-top: 10px;
+    
+     height: 1px;
+     border-bottom: 1px solid black;
+     position: relative;
+    width: 70%;
+     animation-name: draw;
+    animation-duration: 1s;
+     animation-fill-mode: forwards;  
+     z-index: -1000;
+   
+     
+     }
+   
+   .dropbtn:active{
+     background-color:none;
+    
+     
+     }
+    .dropbtn:focus {outline:0;}
+    .dropdown {
+     position: relative;
+     display: inline-block;
+   }
+   .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color:white;
+   
+   
+     box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
+    
+   }
+   .dropdown:hover .dropdown-content {
+     display: block!important;
+     animation-name: dropanime !important;
+     animation-duration: 0.5s !important;
+     animation-fill-mode: forwards !important;
+   }
+   .cent{
+     width: 86%;
+     margin: auto;
+   }
+   .CartTitle{
+     display: flex;
+     background-color:whitesmoke;
+     height: 50x;
+     justify-content: space-between;
+     align-items: baseline;
+   }
+   .GridCartImage{
+     display: grid;
+     grid-template-columns: auto auto ;
+     
+   }
+   .CheckButtons{
+     display: flex;
+     background-color: #f8f8f8;
+     justify-content: space-between;
+   }
+   .SubTotal{
+     display: flex;
+     justify-content: space-between;
+     box-shadow: 0 -2px 3px 0 hsla(0,0%,60%,.2);
+     width: 100%;
+     height:50px
+   }
+     
+   
+   .HamburgerMenu{
+     display: none;
+   
+     
+   }
+   .SubHamburger{
+     display: flex;
+     justify-content: space-between;
+     width: 110px;
+    
+   }
+   .Cart2{
+   margin-top: -36px;
+  
+   }
+   .Hamburger  div{
+     width: 21px;
+     height: 3px;
+     margin-left: 10px;
+   
+     background-color: darkblue;
+    
+     margin-top: 5px;
+   
+   
+   
+   
+   }
+     @keyframes draw {
+       0% {
+         width: 0%;
+       
+       }
+      
+       100% {
+         width: 100%;
+         
+   
+       }
+     }
+   @keyframes dropanime{
+   
+       0%{
+         width: 340px;
+         height: 40px;
+        
+       }
+      
+       100%{
+         height:390px;
+         
+   
+       }
+   
+   
+   
+   
+   }
+   @keyframes hide{
+   
+     0%{
+   
+       height: 390px;
+      
+     }
+    
+     100%{
+       height:0px;
+       
+   
+     }
+   }
+  
+   

@@ -1,76 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
+import React from "react";
+import Tabpanel from "../horiziontal-header.component/horizontal-header";
+import { Hamburger } from "../hamburger-container-component/hamburger.component";
+import "./header.styles.css";
+const Headers = () => {
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+    <div>
+      <Hamburger />
+      <header className='hide-header-style'>
+        <Tabpanel />
+      </header>
     </div>
   );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
-
-export default function SimpleTabs() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" style={{height:'62px'}}>
-        <Tabs value={value}TabIndicatorProps={{style: {background:'none'}}} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="CURRENCY CONVERTER" style={{fontFamily:'Roboto',fontWeight:'900',color:'white',fontSize:'16px',letterSpacing:'0.08',opacity:'1'}}{...a11yProps(0)} />
-          <Tab label="CURRENCY EXCHANGE RATES" style={{fontFamily:'Roboto',fontWeight:'900',color:'white',fontSize:'16px',letterSpacing:'0.08'}}{...a11yProps(1)} />
-    
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-    
-    </div>
-  );
-}
+export default Headers;

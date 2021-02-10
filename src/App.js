@@ -1,26 +1,32 @@
-import React from "react";
+import { React, useEffect } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { Switch, Route, Redirect } from "react-router-dom";
-import Authbox from "./component/auth-container-component/auth-display-box.component";
 import { selectCurrentUser } from "./redux/user/user-selector";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Headers from "./component/header-component-component/header.component";
 import HomePage from "./page/homepage/homepage";
+import Exchange from "./component/show-exchange-rate/exchange-component";
+import { getData } from "./redux/rates/rate-action";
+import Authbox from "./component/auth-container-component/auth-display-box.component";
 
-const App = ({ user }) => {
+const App = ({ user, getData }) => {
+  {
+    useEffect(() => {
+      getData();
+    });
+  }
+
+  {
+    console.log(user);
+  }
   return (
     <div>
-      <div className="page-container">
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (user ? <Redirect to="/" /> : <HomePage />)}
-          />
-          <Route exact path="/" render={() => <Authbox />} />
-
-          <Authbox />
-        </Switch>
-      </div>
+      <Headers />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/exchange" component={Exchange} />
+        <Route exact path="/signin" component={Authbox} />
+      </Switch>
     </div>
   );
 };
@@ -28,4 +34,7 @@ const App = ({ user }) => {
 const mapStateToProps = (state) => ({
   user: selectCurrentUser(state),
 });
-export default connect(mapStateToProps, null)(App);
+const mapDispatchToProps = (dispatch) => ({
+  getData: () => dispatch(getData()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);
